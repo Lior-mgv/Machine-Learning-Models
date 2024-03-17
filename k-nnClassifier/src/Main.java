@@ -1,7 +1,3 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -22,16 +18,14 @@ public class Main {
         DataRepository testData = new DataRepository(DataReader.readData(test_set));
         DataRepository trainingData = new DataRepository(DataReader.readData(train_set));
 
-        for (int i = 101; i < 401; i++) {
-            try(PrintWriter pw = new PrintWriter(new FileOutputStream("test.txt",true))) {
+        /*for (int i = 1; i < 200; i++) {
+            try(PrintWriter pw = new PrintWriter(new FileOutputStream("accuracyForK.txt",true))) {
                 pw.println(Classifier.calculateAccuracy(trainingData, testData, i));
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }*/
 
-
-        /*
         Scanner scanner = new Scanner(System.in);
         int input = -1;
         do {
@@ -72,6 +66,5 @@ public class Main {
                 System.out.println("Please enter a valid number\n");
             }
         }while (input != 3);
-*/
     }
 }

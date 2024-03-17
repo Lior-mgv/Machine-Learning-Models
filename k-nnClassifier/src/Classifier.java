@@ -2,9 +2,9 @@ import java.util.*;
 
 public class Classifier {
 
-    public static String classify(DataEntry dataEntry, DataRepository testData, int k) {
+    public static String classify(DataEntry dataEntry, DataRepository trainData, int k) {
         List<EntryDistance> distances = new ArrayList<>();
-        for(var testEntry : testData.list()){
+        for(var testEntry : trainData.list()){
             distances.add(new EntryDistance(testEntry.getDataClass(), dataEntry.findDistance(testEntry)));
         }
         distances.sort(Comparator.comparingDouble(EntryDistance::getDistance));
@@ -24,11 +24,11 @@ public class Classifier {
     }
     public static double calculateAccuracy(DataRepository trainData, DataRepository testData, int k){
         int correctlyClassified = 0;
-        for(var dataEntry : trainData.list()){
-            if(classify(dataEntry, testData, k).equals(dataEntry.getDataClass())){
+        for(var dataEntry : testData.list()){
+            if(classify(dataEntry, trainData, k).equals(dataEntry.getDataClass())){
                 correctlyClassified++;
             }
         }
-        return (double)correctlyClassified/trainData.list().size();
+        return (double)correctlyClassified/testData.list().size();
     }
 }
