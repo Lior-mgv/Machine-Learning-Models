@@ -18,14 +18,6 @@ public class Main {
         DataRepository testData = new DataRepository(DataReader.readData(test_set));
         DataRepository trainingData = new DataRepository(DataReader.readData(train_set));
 
-        /*for (int i = 1; i < 200; i++) {
-            try(PrintWriter pw = new PrintWriter(new FileOutputStream("accuracyForK.txt",true))) {
-                pw.println(Classifier.calculateAccuracy(trainingData, testData, i));
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        }*/
-
         Scanner scanner = new Scanner(System.in);
         int input = -1;
         do {
