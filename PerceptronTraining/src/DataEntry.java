@@ -13,4 +13,8 @@ public class DataEntry {
     public Vector getVector() {
         return vector;
     }
+
+    public Object getDataClass() {
+        return dataClass;
+    }
 }

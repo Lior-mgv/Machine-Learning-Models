@@ -25,10 +25,11 @@ public class Main {
 
         System.out.println("Initial weights: " + Arrays.toString(weightParameters));
         System.out.println("Initial bias " + bias);
-        perceptron.train(trainingData, 100);
-        System.out.println("Weights after training " +  perceptron.getWeights());
+        perceptron.train(trainingData, 500);
+        System.out.println("Weights after training " +  Arrays.toString(perceptron.getWeights()));
         System.out.println("Bias after training " + perceptron.getBias());
 
+        System.out.println("Accuracy of classification: " + perceptron.calculateAccuracy(testData) * 100 + "%.");
 
 
     }
