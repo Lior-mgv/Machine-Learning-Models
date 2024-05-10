@@ -13,7 +13,7 @@ public class DataReader {
                 entries.add(DataParser.parseEntry(l));
             });
         } catch (IOException e) {
-            System.err.println("Error occurred while reading the file");;
+            System.err.println("Error occurred while reading the file");
         }
         return entries;
     }

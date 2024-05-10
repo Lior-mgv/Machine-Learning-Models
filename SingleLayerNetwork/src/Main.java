@@ -35,11 +35,11 @@ public class Main {
 
         Perceptron[] perceptrons = new Perceptron[numOfClasses];
         for (int i = 0; i < numOfClasses; i++) {
-            perceptrons[i] = new Perceptron(new Vector(weightParameters), bias, 0.5);
+            perceptrons[i] = new Perceptron(new Vector(weightParameters), bias, 0.1);
         }
 
         PerceptronLayer perceptronLayer = new PerceptronLayer(perceptrons, classes);
-        perceptronLayer.train(trainingData, 50);
+        perceptronLayer.train(trainingData, 100);
 
         Scanner scanner = new Scanner(System.in);
         int input = -1;

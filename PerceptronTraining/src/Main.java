@@ -23,6 +23,7 @@ public class Main {
         double bias = rnd.nextDouble();
         Perceptron perceptron = new Perceptron(new Vector(weightParameters), bias, 0.01);
 
+
         System.out.println("Initial weights: " + Arrays.toString(weightParameters));
         System.out.println("Initial bias " + bias);
         perceptron.train(trainingData, 500);
